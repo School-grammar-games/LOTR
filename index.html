@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple 2D Sidescroller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="character-selection" id="characterSelection">
+        <img src="Character_images/F_char.png" class="character-option" data-character="F_char">
+        <img src="Character_images/M_char.png" class="character-option" data-character="M_char">
+    </div>      
+    <div class="game-container">
+        <img class="new-character" src="Character_images/Q_char.png">
+        <div class="game-object"></div>
+        <div class="speech-bubble">
+            <p>Die Gefährten brauchen deine Hilfe um Sauron zu besiegen. Bist du bereit? </p>
+        </div>
+        <div class="buttons">
+            <button class="yes-button">Ja</button>
+            <button class="no-button">Nein</button>
+            <button class="no-button"></button>
+            <button class="no-button"></button>
+            <button class="no-button"></button>
+          </div>          
+        <div class="score" id="score">Score: 0</div>
+        <!-- Add this line within the game-container div -->
+        <img class="game-over-image" id="gameOverImage" style="display: none;">
+    </div>
+    <div class="game-over-container" style="display: none;"> <!-- Add this div for the game over container -->
+        <!-- Add the "class="replay-button"" attribute to the "Replay" button -->
+        <button id="replayButton" class="replay-button">Replay</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

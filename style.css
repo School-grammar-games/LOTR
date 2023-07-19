@@ -1,0 +1,318 @@
+.character-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff; 
+  z-index: 10;
+}
+
+.character-option {
+  width: 300px;
+  height: auto;
+  margin: 0 20px;
+  cursor: pointer;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.game-container {
+position: relative;
+width: 90vw; /* set the width to 90% of the viewport width */
+height: calc(90vw * 9 / 16); /* calculate the height based on the aspect ratio (16:9) */
+max-width: 800px; /* optionally, set a maximum width to avoid making the game too large on large screens */
+max-height: 450px; /* optionally, set a maximum height to avoid making the game too tall on portrait screens */
+background-image: url("Background_images/Scene1.png");
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+overflow: hidden;
+border: 5px solid #000;
+}
+
+.game-object {
+  position: absolute;
+  width: 225px;
+  height: 125px;
+  bottom: 5% !important;
+}
+
+.new-character {
+  position: absolute;
+  bottom: 7%;
+  left: 73%;
+  width: 150px;
+  height: 140px;
+  z-index: 1; /* Set the z-index to 1 to ensure it's displayed below the game object */
+}
+.speech-bubble {
+  display: none;
+  position: absolute;
+  bottom: 280px;
+  left: 25%;
+  width: 400px;
+  height: 70px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 30px;
+  padding: 10px;
+  z-index: 2;
+}
+
+.speech-bubble p {
+  margin: 0;
+  font-size: 18px;
+  text-align: center;
+}
+
+.yes-button, .no-button {
+  width: 100px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.yes-button,
+.no-button {
+  flex: 1;
+  height: 60px;
+  margin: 0 5px;
+}
+
+.score {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 20px;
+  color: white;
+}
+
+#gameOverImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#finalScore {
+  position: absolute;
+  bottom: 450px;
+  left: 65%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  z-index: 11 !important;
+}
+
+.replay-button {
+  position: absolute;
+  bottom: 350px;
+  left: 65%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 11 !important; 
+}
+
+/* Media query for mobile devices in landscape mode */
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+  #finalScore {
+      bottom: 45%;
+      font-size: 24px;
+      z-index: 11 !important;
+  }
+
+  .replay-button {
+      bottom: 30%;
+      font-size: 16px;
+      padding: 8px 16px;
+      z-index: 11 !important;
+  }
+}
+
+.new-character[src$="Q_char3.png"] {
+  width: 160px;
+  height: 200px;
+  bottom:10px;
+  left: 79%;
+}
+.new-character[src$="Q_char2.png"] {
+  width: 150px;
+  height: 150px;
+  bottom:17px;
+  left: 77%;
+}
+.new-character[src$="Q_char4.png"] {
+  width: 135px;
+  height: 180px;
+  bottom:17px;
+  left: 78%;
+}
+.new-character[src$="Q_char5.png"] {
+  width: 150px;
+  height: 200px;
+  bottom:15px;
+  left: 77%;
+}
+.new-character[src$="Q_char6.png"] {
+  width: 250px;
+  height: 300px;
+  bottom:-38px;
+  left: 73%;
+}
+.new-character[src$="Q_char7.png"] {
+  width: 150px;
+  height: 185px;
+  bottom:15px;
+  left: 77%;
+}
+.new-character[src$="Q_char8.png"] {
+  width: 210px;
+  height: 225px;
+  bottom:8px;
+  left: 76%;
+}
+.new-character[src$="Q_char10.png"] {
+  width: 210px;
+  height: 300px;
+  bottom:-40px;
+  left: 75%;
+}
+.new-character[src$="Q_char9.png"] {
+  width: 200px;
+  height: 250px;
+  bottom:-20px;
+  left: 75%;
+}
+.new-character[src$="Q_char.png"] {
+  width: 210px;
+  height: 200px;
+  bottom:18px;
+}
+.backgroundImage[src$="Scene4.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
+  background-size: cover;
+}
+.backgroundImage[src$="Scene11.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  object-fit: contain;
+  background-size: cover;
+}
+.continue-button {
+  position: absolute;
+  top: 90%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.continue-button.active {
+  display: block;
+}
+
+.continue-button:hover {
+  background-color: #3e8e41;
+}
+.game-container img[src$="1to2world.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+.game-container img[src$="2to3world.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  object-fit: cover;
+  z-index: 10;
+}
+.game-container img[src$="3to4world.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  object-fit: cover;
+  z-index: 10;
+}
+.game-container img[src$="4to5world.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  object-fit: cover;
+  z-index: 10;
+}
+.game-container img[src$="5to6world.png"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 101%;
+  object-fit: cover;
+  z-index: 10;
+}
+#winningScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1000;  /* This value should be higher than the z-index values of all other elements */
+  background-image: url("Win_image/gewonnen.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
