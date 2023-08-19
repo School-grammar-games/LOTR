@@ -192,6 +192,13 @@ noButton4.addEventListener('click', () => {
 let currentIndex = 0;
 const keys = Object.keys(speechBubbles);
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 function chooseBubble() {
   if (keys.length === 0) {
     return null;
@@ -199,6 +206,16 @@ function chooseBubble() {
 
   const selectedKey = keys[currentIndex];
   currentIndex = (currentIndex + 1) % keys.length;
+  
+  // Randomize button positions
+  const buttons = [yesButton, noButton, noButton2, noButton3, noButton4];
+  shuffleArray(buttons);
+  
+  // Assign the shuffled positions to the buttons
+  const container = yesButton.parentElement;
+  buttons.forEach(button => {
+      container.appendChild(button);
+  });
   
   return selectedKey;
 }
